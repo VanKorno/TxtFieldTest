@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.compose)
     id("maven-publish")
 }
 
@@ -31,6 +32,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
+    buildFeatures {
+        compose = true
+    }
+    publishing {
+        singleVariant("release") {}
+    }
 }
 
 dependencies {
@@ -41,4 +48,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+val versionTag = System.getenv("VERSION") ?: "unspecified"
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "io.github.vankorno"
+                artifactId = "txtfield"
+                version = versionTag
+            }
+        }
+    }
 }
