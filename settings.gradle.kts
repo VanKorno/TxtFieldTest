@@ -24,4 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "TxtFieldTest"
 include(":app")
+include(":TxtField")
  
