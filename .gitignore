@@ -1,0 +1,35 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+!.idea/dictionaries/
+!.idea/dictionaries/**
+!.idea\inspectionProfiles\Project_Default.xml
+*.iml
+*.ipr
+*.iws
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+
+# Android
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Kotlin compiler
+.kotlinc/
+
+# AARs / Artifacts (for libraries)
+*.aar
+*.jar
+*.module
+*.pom
+
+# Log files
+*.log
+/gradle/gradle-daemon-jvm.properties
