@@ -6,9 +6,7 @@ plugins {
 android {
     namespace = "io.github.vankorno.txtfieldtest"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
+        version = release(36)
     }
     
     defaultConfig {
