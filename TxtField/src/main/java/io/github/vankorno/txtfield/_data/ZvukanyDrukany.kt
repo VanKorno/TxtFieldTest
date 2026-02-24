@@ -1,5 +1,5 @@
 package io.github.vankorno.txtfield._data
 
-enum class Zvukany {
+enum class ZvukanyDrukany {
     
 }
