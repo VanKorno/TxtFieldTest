@@ -24,15 +24,10 @@ fun TvTextToType(                                                 exerciseText: 
                                                                     isMisclick: Boolean,
                                                                  notTypedColor: Color = Color.White,
 ) {
-    Text(
-         modifier = MOD_MaxW
-             .padding(bottom=80.dp, start=5.dp, end=5.dp)
-        ,
-        text =
+    val text = 
         if (exerciseText.isEmpty() || exerciseText[paragraphIdx].isEmpty()) {
              AnnotatedString("")
-        }
-        else {
+        } else {
             buildAnnotatedString {
                 withStyle(
                     style = SpanStyle(color = Color.DarkGray)
@@ -60,7 +55,13 @@ fun TvTextToType(                                                 exerciseText: 
                     }
                 }
             }
-        },
+        }
+    
+    Text(
+         modifier = MOD_MaxW
+             .padding(bottom=80.dp, start=5.dp, end=5.dp)
+        ,
+        text = text,
         textAlign = TextAlign.Start,
         color = notTypedColor,
         fontSize = 22.sp1(),
