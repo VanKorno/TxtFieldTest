@@ -5,8 +5,13 @@ import androidx.lifecycle.ViewModel
 import com.vankorno.vankornocompose.vm.VmSavedVal
 import com.vankorno.vankornocompose.vm.inc
 import com.vankorno.vankornohelpers.dLog
+import io.github.vankorno.txtfield._data.DefaultTypingPracticeText
+import io.github.vankorno.txtfield._data.vpravy.DefaultTyping
+import io.github.vankorno.txtfield._data.vpravy.TypingPracticeType
 import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 import io.github.vankorno.txtfield.obrobkaTekstu.normalizeExerciseText
+
+private const val TAG = "VmTycjalka"
 
 class VmTycjalka(                                                             ssh: SavedStateHandle
 ) : ViewModel() {
@@ -46,6 +51,8 @@ class VmTycjalka(                                                             ss
     
     val isMisclick = VmSavedVal(ssh, "isMisclick", false)
     
+    val practiceType = VmSavedVal<TypingPracticeType>(ssh, "practiceType", DefaultTyping)
+    
     
     fun startOver() {
         // region LOG
@@ -56,5 +63,19 @@ class VmTycjalka(                                                             ss
         vmTycjalka.repCount.inc()
         vmTycjalka.isMisclick.value = false
     }
+    
+    fun newExercise(                                       text: String = DefaultTypingPracticeText,
+                                                           type: TypingPracticeType = DefaultTyping,
+    ) {
+        // region LOG
+            dLog(TAG, "newExercise() text length = " + text.length)
+        // endregion
+        updateExerciseText(text)
+        repCount.value = -1
+        startOver()
+        practiceType.value = type
+    }
+    
+    
     
 }

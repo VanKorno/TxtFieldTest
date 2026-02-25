@@ -5,7 +5,7 @@ import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 
 // Must init
 
-var newTypingExercise: ()->Unit = { lambdaError("newExercise") }
+//var newTypingExercise: ()->Unit = { lambdaError("newExercise") }
 
 var onFinishTyping: ()->Unit = { vmTycjalka.startOver() }
 

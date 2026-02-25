@@ -4,7 +4,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import com.vankorno.vankornocompose.vm.inc
 import com.vankorno.vankornohelpers.values.playSound
 import io.github.vankorno.txtfield._data.TypingGlobals.typingSoundsAllowed
-import io.github.vankorno.txtfield._data.newTypingExercise
 import io.github.vankorno.txtfield._data.onFinishTyping
 import io.github.vankorno.txtfield._data.onTypingError
 import io.github.vankorno.txtfield._data.onTypingParagraphFinish
@@ -18,7 +17,7 @@ object TyperOps {
     fun onValueChangeOther(                                                  newVal: TextFieldValue
     ) {
         if (vmTycjalka.exerciseText.value.isEmpty()) {
-            newTypingExercise()
+            vmTycjalka.newExercise()
             return //\/\/\/\/\/\
         }
         val exerciseText = vmTycjalka.exerciseText.value
