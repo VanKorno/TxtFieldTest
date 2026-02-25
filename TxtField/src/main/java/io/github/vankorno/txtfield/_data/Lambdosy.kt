@@ -1,6 +1,39 @@
 package io.github.vankorno.txtfield._data
 
-var focusOnTextField: ()->Boolean = { false }
+import com.vankorno.vankornohelpers.lambdaError
+import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 
-var scrollTvToTop: ()->Unit = {}
+// Must init
+
+var newTypingExercise: ()->Unit = { lambdaError("newExercise") }
+
+var onFinishTyping: ()->Unit = { vmTycjalka.startOver() }
+
+
+// Optional
+/**
+ * Optional additional actions.
+ */
+var onTypingError: ()->Unit = {}
+
+/**
+ * Optional additional actions.
+ */
+var onTypingParagraphFinish: ()->Unit = {}
+
+
+
+// Internal
+
+var focusOnTextField: () -> Boolean = { false }
+    internal set
+
+internal var scrollTvToTop: ()->Unit = { lambdaError("scrollTvToTop") }
+
+
+
+
+
+
+
 
