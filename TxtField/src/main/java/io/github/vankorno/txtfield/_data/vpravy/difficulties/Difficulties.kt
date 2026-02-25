@@ -1,7 +1,7 @@
 package io.github.vankorno.txtfield._data.vpravy.difficulties
 
 import com.vankorno.vankornohelpers.convenience.libRandom
-import io.github.vankorno.txtfield._data.difficultyLevel
+import io.github.vankorno.txtfield._data.TypingGlobals.typingDifficultyLevel
 
 object Difficulties {
     var typingUnits = emptyArray<String>()
@@ -13,9 +13,9 @@ object Difficulties {
         val idx = typingUnits.indices.libRandom()
         val example = typingUnits[idx]
         
-        val ending = if (difficultyLevel < 3)
+        val ending = if (typingDifficultyLevel < 3)
                         " "
-                    else if (difficultyLevel == 3  ||  example.last() != '\n')
+                    else if (typingDifficultyLevel == 3  ||  example.last() != '\n')
                         "\n"
                     else
                         ""
@@ -25,7 +25,7 @@ object Difficulties {
     
     fun updateSet() {
         val units = DiffTypingUnits()
-        typingUnits = when (difficultyLevel) {
+        typingUnits = when (typingDifficultyLevel) {
             1 -> units.lvl1()
             2 -> units.lvl2()
             3 -> units.lvl3()

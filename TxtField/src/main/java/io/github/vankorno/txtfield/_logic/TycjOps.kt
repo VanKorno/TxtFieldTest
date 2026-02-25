@@ -3,12 +3,12 @@ package io.github.vankorno.txtfield._logic
 import androidx.compose.ui.text.input.TextFieldValue
 import com.vankorno.vankornocompose.vm.inc
 import com.vankorno.vankornohelpers.values.playSound
+import io.github.vankorno.txtfield._data.TypingGlobals.typingSoundsAllowed
 import io.github.vankorno.txtfield._data.newTypingExercise
 import io.github.vankorno.txtfield._data.onFinishTyping
 import io.github.vankorno.txtfield._data.onTypingError
 import io.github.vankorno.txtfield._data.onTypingParagraphFinish
 import io.github.vankorno.txtfield._data.scrollTvToTop
-import io.github.vankorno.txtfield._data.typingSoundsAllowed
 import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 import io.github.vankorno.txtfield.zvuky.KlavaSound
 import io.github.vankorno.txtfield.zvuky.getClickSound

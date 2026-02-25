@@ -1,5 +1,7 @@
 package io.github.vankorno.txtfield._data
 
-var typingSoundsAllowed = false
-
-var difficultyLevel = 1
+object TypingGlobals {
+    @Volatile var typingSoundsAllowed = false
+    
+    @Volatile var typingDifficultyLevel = 1
+}
