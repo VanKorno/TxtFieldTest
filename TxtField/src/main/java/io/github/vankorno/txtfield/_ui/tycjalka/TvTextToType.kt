@@ -3,6 +3,7 @@ package io.github.vankorno.txtfield._ui.tycjalka
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
@@ -15,16 +16,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import com.vankorno.vankornocompose.sp1
 import com.vankorno.vankornocompose.values.MOD_MaxW
+import com.vankorno.vankornocompose.vm.state
+import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 import io.github.vankorno.txtfield.obrobkaTekstu.formatTypedText
 
 @Composable
-fun TvTextToType(                                                 exerciseText: Array<CharArray>,
-                                                                  paragraphIdx: Int,
-                                                                       charIdx: Int,
-                                                                    isMisclick: Boolean,
-                                                                 notTypedColor: Color = Color.White,
+fun TvTextToType(                                                notTypedColor: Color = Color.White
 ) {
-    val text = 
+    val exerciseText by vmTycjalka.exerciseText.state()
+    val paragraphIdx by vmTycjalka.paragraphIdx.state()
+    val charIdx by vmTycjalka.charIdx.state()
+    val isMisclick by vmTycjalka.isMisclick.state()
+    
+    val text =
         if (exerciseText.isEmpty() || exerciseText[paragraphIdx].isEmpty()) {
              AnnotatedString("")
         } else {
@@ -50,8 +54,8 @@ fun TvTextToType(                                                 exerciseText: 
                 
                 val paragraphCount = exerciseText.size
                 if (paragraphCount > paragraphIdx+1) {
-                    for (ii  in  paragraphIdx+1 until minOf(paragraphCount, paragraphIdx + 6)) {
-                        append(formatTypedText( String(exerciseText[ii]) ))
+                    for (idx  in  paragraphIdx+1 until minOf(paragraphCount, paragraphIdx + 6)) {
+                        append(formatTypedText( String(exerciseText[idx]) ))
                     }
                 }
             }
