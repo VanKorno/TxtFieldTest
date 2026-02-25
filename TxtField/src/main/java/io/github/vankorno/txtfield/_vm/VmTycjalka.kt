@@ -3,6 +3,9 @@ package io.github.vankorno.txtfield._vm
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.vankorno.vankornocompose.vm.VmSavedVal
+import com.vankorno.vankornocompose.vm.inc
+import com.vankorno.vankornohelpers.dLog
+import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
 import io.github.vankorno.txtfield.obrobkaTekstu.normalizeExerciseText
 
 class VmTycjalka(                                                             ssh: SavedStateHandle
@@ -44,6 +47,14 @@ class VmTycjalka(                                                             ss
     val isMisclick = VmSavedVal(ssh, "isMisclick", false)
     
     
-    
+    fun startOver() {
+        // region LOG
+            dLog("VmTycjalka", "startOver()")
+        // endregion
+        vmTycjalka.paragraphIdx.value = 0
+        vmTycjalka.charIdx.value = 0
+        vmTycjalka.repCount.inc()
+        vmTycjalka.isMisclick.value = false
+    }
     
 }
