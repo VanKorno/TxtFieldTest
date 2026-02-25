@@ -25,7 +25,7 @@ var onTypingParagraphFinish: ()->Unit = {}
 
 // Internal
 
-var focusOnTextField: () -> Boolean = { false }
+var focusOnTypingInputField: ()->Unit = {}
     internal set
 
 internal var scrollTvToTop: ()->Unit = { lambdaError("scrollTvToTop") }

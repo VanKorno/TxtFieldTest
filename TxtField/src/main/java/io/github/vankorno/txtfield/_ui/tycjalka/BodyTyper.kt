@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.vankorno.vankornocompose.LibScreen.Companion.smallUI
 import com.vankorno.vankornohelpers.values.showKeyboard
-import io.github.vankorno.txtfield._data.focusOnTextField
+import io.github.vankorno.txtfield._data.focusOnTypingInputField
 import io.github.vankorno.txtfield._data.scrollTvToTop
 import kotlinx.coroutines.launch
 
@@ -37,8 +37,8 @@ fun BodyTyper(                                                               mod
             .verticalScroll(scrollState)
             .combinedClickable(
                 onClick = {
-                    if (focusOnTextField())
-                        showKeyboard()
+                    focusOnTypingInputField()
+                    showKeyboard()
                 },
                 interactionSource = interactionSource,
                 indication = null

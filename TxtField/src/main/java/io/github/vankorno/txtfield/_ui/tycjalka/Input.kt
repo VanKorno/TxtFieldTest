@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vankorno.vankornocompose.actions.libRequest
 import com.vankorno.vankornohelpers.values.showKeyboard
-import io.github.vankorno.txtfield._data.focusOnTextField
+import io.github.vankorno.txtfield._data.focusOnTypingInputField
 import io.github.vankorno.txtfield._logic.TyperOps
 
 
@@ -45,15 +45,15 @@ fun TypingInputContainer() {
 fun TypingInput() {
     val inputState by remember { mutableStateOf(TextFieldValue()) }
     val focusRequester = remember { FocusRequester() }
-    focusOnTextField = { focusRequester.libRequest() }
+    focusOnTypingInputField = { focusRequester.libRequest() }
     
     TextField(
         modifier = Modifier
             .widthIn(min = 1.dp, max = 5.dp)
             .focusRequester(focusRequester)
             .onGloballyPositioned {
-                if (focusOnTextField())
-                    showKeyboard()
+                focusOnTypingInputField()
+                showKeyboard()
             }
             .onKeyEvent {                          /* import androidx.compose.ui.input.key.onKeyEvent      import android.view.KeyEvent */
                 when (it.nativeKeyEvent.keyCode) {
