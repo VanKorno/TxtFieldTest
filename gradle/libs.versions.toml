@@ -1,14 +1,14 @@
 [versions]
 agp = "9.0.1"
 kotlin = "2.3.10"
-composeBom = "2026.02.00"
+composeBom = "2026.02.01"
 
 junit = "4.13.2"
 androidxJunit = "1.3.0"
 espressoCore = "3.7.0"
-testManifest = "1.10.3"
+testManifest = "1.10.4"
 
-vankornoCompose = "2.93"
+vankornoCompose = "2.105"
 
 
 [libraries]
