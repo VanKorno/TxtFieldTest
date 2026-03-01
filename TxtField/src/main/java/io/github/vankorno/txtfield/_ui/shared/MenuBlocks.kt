@@ -19,7 +19,7 @@ import com.vankorno.vankornocompose.values.MOD_MaxW
 @Composable
 fun DrukUiPracticeTypeBlock(                                title: Lazy<Map<String, Lazy<String>>>,
                                                             color: Color = LibColor.Surface.color,
-                                                      composables: @Composable ColumnScope.()->Unit,
+                                                          content: @Composable ColumnScope.()->Unit,
 ) {
     Column(
         MOD_MaxW
@@ -32,14 +32,14 @@ fun DrukUiPracticeTypeBlock(                                title: Lazy<Map<Stri
     ) {
         DrukUiTitleS(title)
         
-        composables()
+        content()
     }
 }
 
 
 @Composable
 fun DrukUiPracticeSetBlock(                                  title: Lazy<Map<String, Lazy<String>>>,
-                                                       composables: @Composable RowScope.()->Unit,
+                                                           content: @Composable RowScope.()->Unit,
 ) {
     DrukUiPracticeTypeBlock(title) {
         Row(
@@ -49,7 +49,7 @@ fun DrukUiPracticeSetBlock(                                  title: Lazy<Map<Str
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.End
         ) {
-            composables()
+            content()
         }
     }
 }

@@ -55,7 +55,7 @@ fun TypingInput() {
                 focusOnTypingInputField()
                 showKeyboard()
             }
-            .onKeyEvent {                          /* import androidx.compose.ui.input.key.onKeyEvent      import android.view.KeyEvent */
+            .onKeyEvent {
                 when (it.nativeKeyEvent.keyCode) {
                     KeyEvent.KEYCODE_DPAD_UP,
                     KeyEvent.KEYCODE_DPAD_DOWN,
