@@ -2,10 +2,9 @@ package io.github.vankorno.txtfield.zvuky
 
 import io.github.vankorno.txtfield.R
 
-enum class KlavaSound(                                                          val file: Int
-) {
-    Error(R.raw.error_easy),
-    Click(R.raw.keyboard_normal_click),
-    ClickLarge(R.raw.keyboard_large_key_click),
-    ClickUnique(R.raw.keyboard_key_press_unique), // TODO Not used yet
-}
+val KlavaSoundError = R.raw.error_easy
+val KlavaSoundClick = R.raw.keyboard_normal_click
+val KlavaSoundClickLarge = R.raw.keyboard_large_key_click
+val KlavaSoundClickUnique = R.raw.keyboard_key_press_unique // TODO Not used yet
+
+

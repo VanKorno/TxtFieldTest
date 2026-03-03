@@ -9,7 +9,7 @@ import io.github.vankorno.txtfield._data.onTypingError
 import io.github.vankorno.txtfield._data.onTypingParagraphFinish
 import io.github.vankorno.txtfield._data.scrollTvToTop
 import io.github.vankorno.txtfield._vm.VmTycjalkaHolder.vmTycjalka
-import io.github.vankorno.txtfield.zvuky.KlavaSound
+import io.github.vankorno.txtfield.zvuky.KlavaSoundError
 import io.github.vankorno.txtfield.zvuky.getClickSound
 
 object TyperOps {
@@ -58,7 +58,7 @@ object TyperOps {
             onTypingError()
             
             if (typingSoundsAllowed)
-                playSound(KlavaSound.Error.file)
+                playSound(KlavaSoundError)
         }
     }
     
