@@ -2,7 +2,7 @@ package io.github.vankorno.txtfield._logic
 
 import androidx.compose.ui.text.input.TextFieldValue
 import com.vankorno.vankornocompose.vm.inc
-import com.vankorno.vankornohelpers.values.playSound
+import com.vankorno.vankornohelpers.values.LibLambdas.playSound
 import io.github.vankorno.txtfield._data.TypingGlobals.typingSoundsAllowed
 import io.github.vankorno.txtfield._data.onFinishTyping
 import io.github.vankorno.txtfield._data.onTypingError

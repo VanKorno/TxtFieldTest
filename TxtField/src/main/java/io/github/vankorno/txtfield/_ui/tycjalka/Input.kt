@@ -25,7 +25,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vankorno.vankornocompose.actions.libRequest
-import com.vankorno.vankornohelpers.values.showKeyboard
+import com.vankorno.vankornohelpers.values.LibLambdas.showKeyboard
 import io.github.vankorno.txtfield._data.focusOnTypingInputField
 import io.github.vankorno.txtfield._logic.TyperOps
 

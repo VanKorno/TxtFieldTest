@@ -26,7 +26,7 @@ import com.vankorno.vankornocompose.theme_main.LibAccentColor
 import com.vankorno.vankornocompose.theme_main.LibColor
 import com.vankorno.vankornocompose.values.LibGlobals2.libVm
 import com.vankorno.vankornocompose.values.MOD_MaxW
-import com.vankorno.vankornohelpers.values.hideKeyboard
+import com.vankorno.vankornohelpers.values.LibLambdas.hideKeyboard
 import io.github.vankorno.txtfield._data.ScrTyper
 import io.github.vankorno.txtfield._data.TypingGlobals.typingDifficultyLevel
 import io.github.vankorno.txtfield._data.vpravy.DifficultyTyping

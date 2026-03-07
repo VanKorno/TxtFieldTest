@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.vankorno.vankornocompose.LibScreen.Companion.smallUI
-import com.vankorno.vankornohelpers.values.showKeyboard
+import com.vankorno.vankornohelpers.values.LibLambdas.showKeyboard
 import io.github.vankorno.txtfield._data.focusOnTypingInputField
 import io.github.vankorno.txtfield._data.scrollTvToTop
 import kotlinx.coroutines.launch
