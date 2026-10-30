@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "io.github.vankorno.txtfield"
     compileSdk {
-        version = release(36)
+        version = release(37)
     }
     
     defaultConfig {
@@ -35,7 +35,9 @@ android {
         compose = true
     }
     publishing {
-        singleVariant("release") {}
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 }
 
@@ -53,7 +55,10 @@ dependencies {
     implementation(libs.vankornocompose)
 }
 
-val versionTag = System.getenv("VERSION") ?: "unspecified"
+val versionTag = providers.environmentVariable("VERSION").orNull
+    ?: providers.gradleProperty("version").orNull.takeIf { it != "unspecified" }
+    ?: project.version.takeIf { it != "unspecified" }?.toString()
+    ?: "unspecified"
 
 afterEvaluate {
     publishing {

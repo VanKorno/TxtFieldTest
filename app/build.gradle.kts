@@ -6,13 +6,13 @@ plugins {
 android {
     namespace = "io.github.vankorno.txtfieldtest"
     compileSdk {
-        version = release(36)
+        version = release(37)
     }
     
     defaultConfig {
         applicationId = "io.github.vankorno.txtfieldtest"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
         
